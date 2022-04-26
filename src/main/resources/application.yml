@@ -1,0 +1,25 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/myblog?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: liziwen12138
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # redis配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+server:
+  port: 8081
+mybatis-plus:
+  mapper-locations: mapper/*.xml
+
+# 上传模式 可选 oss(暂时不增加该功能，稍微复杂)或local  （http://和最后的/一定不能去！！！）
+upload:
+  mode: local
+  local:
+    # nginx映射本地文件路径，无域名则为 ip:83
+    url: http://你的文件上传子域名/
+    # 本地文件存储路径
+    path: /usr/local/upload/
+
